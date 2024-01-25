@@ -1,7 +1,7 @@
-PGF_FLAGS= -cuda -gpu=cuda12.3 -c -g -O4 -Mpreprocess -Mbackslash -Mconcur -Mextend -Dsingle_precision -Mfree -Mrecursive -DGPU -Minfo=all -Mfma -Mfactorize -mavx2
+PGF_FLAGS= -cuda -gpu=cuda12.3 -c -g -O4 -Mpreprocess -Mbackslash -Mconcur -Mextend -Dsingle_precision -Mfree -Mrecursive -DGPU -Mfma -Mfactorize -mavx2
 
 Hn0_tcmp: intermediate
-        pgf90 -cuda -gpu=cuda12.3 -o ../MU_STEM.GPU.out *.o -cudalib=cufft
+        pgf90 -cuda -gpu=cuda12.3 -o ../MU_STEM.GPU *.o -cudalib=cufft
 modules:
         pgf90 $(PGF_FLAGS) quadpack.f90
         pgf90 $(PGF_FLAGS) m_precision.f90
